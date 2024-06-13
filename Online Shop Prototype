@@ -1,0 +1,64 @@
+Online Shop Prototype
+```
+import datetime
+
+class Client:
+
+  def __init__(self, id, name): 
+    self.id = id 
+    self.name = name
+    self.transactions = []
+    
+
+  def add_transaction(self, transaction):
+        self.transactions.append(transaction)
+
+  def print_transactions(self):
+        print(f"Client: {self.name}")
+        for transaction in self.transactions:
+            transaction.print_transaction()
+
+class Store_items:
+
+  def __init__(self, name, amount, price): 
+    self.name = name
+    self.amount = amount
+    self.price = price
+
+  def __str__(self):
+        return f"{self.name} - {self.amount} units - {self.price:.2f} EUR each"
+
+class Transaction:
+
+  def __init__(self, client, items):
+    self.client = client
+    self.items = items
+    self.time_stamp = datetime.datetime.now()
+
+  def print_transaction(self):
+        print(f"  Transaction at {self.time_stamp}:")
+        for item in self.items:
+            print(f"    {item}")
+
+client1 = Client("123","Janno")
+client2 = Client("456","Melissa")
+client3 = Client("789","Luca")
+
+item1 = Store_items("Apple", 10, 1.50)
+item2 = Store_items("Flower", 3, 5)
+item3 = Store_items("Bread", 5, 2.99)
+
+transaction1 = Transaction(client1, [item1, item2])
+transaction2 = Transaction(client2, [item3])
+transaction3 = Transaction(client3, [item1, item3])
+
+client1.add_transaction(transaction1)
+client2.add_transaction(transaction2)
+client3.add_transaction(transaction3)
+
+
+clients = [client1, client2, client3]
+for client in clients:
+    client.print_transactions()
+
+```
