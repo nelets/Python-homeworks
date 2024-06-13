@@ -21,7 +21,7 @@ If the balance becomes negative, withdrawal is not possible.
 Add check balance optionality Example for hard level: print("\nWhat would you like to do?") print("1. Deposit money") print("2. Withdraw money") print("3. Check balance") print("4. Exit")
 
 I did medium:
-``` py
+``` 
 print('Welcome to the bank!')
 account_balance = 0
 
