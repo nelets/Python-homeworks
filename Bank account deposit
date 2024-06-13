@@ -1,0 +1,44 @@
+Description: Create a program where the user can input deposits into a bank account. The program should use if-else statements, input(), int() and while True loop to keep track of deposits.
+
+Instructions:
+
+Welcome the user to the bank
+Initiate balance = 0
+Ask the user to input the amount of money they want to deposit.
+Add the deposit amount to the total balance
+Ask the user if they want to make another deposit or exit the bank.
+If they choose to make another deposit, repeat the process (while True).
+If not, print the total amount deposited and exit the bank.
+Medium Level
+Instructions:
+
+Use try and except to handle non-integer inputs for deposits.
+Hard Level
+Instructions:
+
+Add bank withdrawal (if user wants to withdraw money the balance decreases)
+If the balance becomes negative, withdrawal is not possible.
+Add check balance optionality Example for hard level: print("\nWhat would you like to do?") print("1. Deposit money") print("2. Withdraw money") print("3. Check balance") print("4. Exit")
+
+I did medium:
+``` py
+print('Welcome to the bank!')
+account_balance = 0
+
+while True:
+    try:
+        deposit_amount = float(input('Enter the deposit amount: '))
+
+        account_balance += deposit_amount
+        print((f'Your account total balance is now {account_balance} eur'))
+
+        another_deposit = input('Do you want to deposit more money (yes/no)? ')
+
+        if another_deposit == 'no':
+            print(f'Thank you for using our bank! Your account total balance is {account_balance} eur!')
+            break
+        elif another_deposit == 'yes':
+            continue
+    except:
+      print('Wrong input!')
+```
